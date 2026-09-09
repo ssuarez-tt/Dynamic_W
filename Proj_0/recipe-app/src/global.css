@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* CSS custom properties (variables). Defined once, used everywhere. */
+:root {
+  --c-blue: #48b2ff;
+  --ff-acme: 'Acme', sans-serif;
+}
+
+/* Card component styles */
+.card {
+  max-width: 900px;
+  margin: 28px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.08);
+  color: #111827;
+}
+
+.card h2 {
+  font-family: var(--ff-acme);
+  margin: 0 0 12px 0;
+  color: var(--c-blue);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.card th,
+.card td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #eef2f7;
+  text-align: left;
+}
+
+.card th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.card h3 {
+  margin-top: 18px;
+}
+
+.card ol {
+  padding-left: 20px;
+}
