@@ -1,6 +1,6 @@
-const IngredientList = ({ ingredients }) => {
+const IngredientList = ({ ingredients, className }) => {
   return (
-    <table>
+    <table className={className}>
       <thead>
         <tr>
           <th>Ingredient</th>

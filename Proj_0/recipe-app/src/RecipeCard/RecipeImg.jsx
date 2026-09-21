@@ -1,7 +1,7 @@
-const RecipeImg = ({ src, alt }) => {
+const RecipeImg = ({ src, alt, className }) => {
   return (
-    <div style={{maxWidth: 800}}>
-      <img src={src} alt={alt} style={{ width: '100%', height: 'auto', display: 'block' }} />
+    <div className={className}>
+      <img src={src} alt={alt} />
     </div>
   )
 }

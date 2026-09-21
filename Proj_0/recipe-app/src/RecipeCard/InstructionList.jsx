@@ -1,6 +1,6 @@
-const InstructionList = ({ instructions }) => {
+const InstructionList = ({ instructions, className }) => {
   return (
-    <section>
+    <section className={className}>
       <h4>Instructions</h4>
       <ol>
         {instructions.map((step, i) => (

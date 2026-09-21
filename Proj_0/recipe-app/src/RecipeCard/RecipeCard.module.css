@@ -1,0 +1,150 @@
+.card {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0;
+	background: #ffffff;
+	border-radius: 0;
+	box-shadow: none;
+	color: #111827;
+}
+
+.listContainer {
+	max-width: 860px;
+	margin: 20px auto;
+	border: 1px solid #e5e7eb;
+	border-radius: 10px;
+	overflow: hidden;
+	background: #f8fafc;
+}
+
+.listItemWrap + .listItemWrap {
+	border-top: 1px solid #e5e7eb;
+}
+
+.squareCard {
+	background: #ffffff;
+	border-radius: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+
+.squareCardOpen {
+	background: #fffaf5;
+}
+
+.listHeader {
+	display: grid;
+	grid-template-columns: 52px 1fr 32px;
+	align-items: center;
+	gap: 12px;
+	padding: 18px 20px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.listIndex {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	background: #eff6ff;
+	color: var(--c-blue);
+	font-weight: 700;
+	border-radius: 8px;
+}
+
+.listHeader h2 {
+	margin: 0;
+	color: #111827;
+	font-size: 1.05rem;
+	font-family: var(--ff-acme);
+}
+
+.chevron {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.8rem;
+	line-height: 1;
+	color: var(--c-blue);
+	font-weight: 700;
+}
+
+.imageFrame {
+	max-width: 100%;
+	margin: 0 0 12px;
+}
+
+.imageFrame img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 0;
+}
+
+.details {
+	padding: 0 20px 20px;
+	animation: reveal 180ms ease-out;
+}
+
+.info {
+	margin-top: 16px;
+}
+
+.ingredients {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 12px;
+}
+
+.ingredients th,
+.ingredients td {
+	padding: 8px 12px;
+	border-bottom: 1px solid #eef2f7;
+	text-align: left;
+}
+
+.ingredients th {
+	background: #f8fafc;
+	font-weight: 600;
+}
+
+.details h3 {
+	margin-top: 18px;
+}
+
+.instructions ol {
+	padding-left: 20px;
+}
+
+@keyframes reveal {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 560px) {
+	.listContainer {
+		margin: 12px;
+	}
+
+	.listHeader {
+		grid-template-columns: 42px 1fr 28px;
+		padding: 14px 16px;
+	}
+
+	.listIndex {
+		width: 34px;
+		height: 34px;
+	}
+
+	.details {
+		padding: 0 16px 16px;
+	}
+}

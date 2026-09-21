@@ -1,14 +1,14 @@
-import recipe from './recipe-data'
-import Card from './Card.jsx'
-import RecipeImg from './RecipeImg'
-import IngredientList from './IngredientList'
-import InstructionList from './InstructionList'
-import RecipeInfo from './RecipeInfo'
-import Button from '../components/Button'
-import Accordion from '../components/Accordion'
-import styles from './RecipeCard.module.css'
+import recipe from './RecipeCard/recipe-data'
+import Card from './RecipeCard/Card.jsx'
+import RecipeImg from './RecipeCard/RecipeImg'
+import IngredientList from './RecipeCard/IngredientList'
+import InstructionList from './RecipeCard/InstructionList'
+import RecipeInfo from './RecipeCard/RecipeInfo'
+import Button from './components/Button'
+import Accordion from './components/Accordion'
+import styles from './RecipeCard/RecipeCard.module.css'
 
-const RecipeCard = () => {
+const AccordionPage = () => {
   return (
     <Card className={styles.card}>
       <Accordion
@@ -41,4 +41,4 @@ const RecipeCard = () => {
   )
 }
 
-export default RecipeCard
+export default AccordionPage

@@ -1,6 +1,6 @@
-const RecipeInfo = ({ recipe }) => {
+const RecipeInfo = ({ recipe, className }) => {
   return (
-    <section>
+    <section className={className}>
       <p>{recipe.title} — A simple recipe.</p>
     </section>
   )

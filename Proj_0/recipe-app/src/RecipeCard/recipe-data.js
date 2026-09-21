@@ -1,6 +1,8 @@
+import milkteaImage from '../assets/milktea.jpg'
+
 const recipe = {
   title: 'Condensed Milk Milk Tea',
-  image: 'https://via.placeholder.com/800x480?text=Milk+Tea',
+  image: milkteaImage,
   ingredients: [
     { name: 'Black Tea', amount: '15 g', link: 'https://example.com' },
     { name: 'Water', amount: '1300 g', link: 'https://example.com' },

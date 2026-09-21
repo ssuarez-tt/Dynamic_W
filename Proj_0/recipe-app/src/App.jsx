@@ -1,9 +1,11 @@
-import RecipeCard from './RecipeCard'
+import AccordionPage from './AccordionPage'
+import ConnectedAccordionPage from './ConnectedAccordionPage'
 
 const App = () => {
   return (
     <div>
-      <RecipeCard />
+      {/* <AccordionPage /> */}
+      <ConnectedAccordionPage />
     </div>
   )
 }
