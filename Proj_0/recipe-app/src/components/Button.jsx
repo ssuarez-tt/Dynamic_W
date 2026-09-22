@@ -6,7 +6,6 @@ const Button = ({ children, className = '', type = 'button', onClick, ...props }
   )
 }
 
-// TODO (in class): build this up together.
 // const Button = (props) => {
 //   const {children} = props
 //   return <button className="px-8 py-3 border">{children}</button>

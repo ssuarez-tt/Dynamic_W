@@ -5,7 +5,44 @@
 	background: #ffffff;
 	border-radius: 0;
 	box-shadow: none;
-	color: #111827;
+	color: #111451;
+}
+
+.buttonCard {
+	max-width: 900px;
+	margin: 20px auto;
+	padding: 0;
+	background: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(16, 24, 40, 0.06);
+	color: #111451;
+}
+
+.buttonHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 18px 20px;
+}
+
+.buttonHeader h2 {
+	margin: 0;
+	font-family: var(--ff-acme);
+}
+
+.toggleButton {
+	padding: 8px 14px;
+	border: 1px solid var(--c-blue);
+	border-radius: 6px;
+	background: var(--c-blue);
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.toggleButton:hover {
+	background: #279eee;
 }
 
 .listContainer {
@@ -14,7 +51,7 @@
 	border: 1px solid #e5e7eb;
 	border-radius: 10px;
 	overflow: hidden;
-	background: #f8fafc;
+	background: #fafafa;
 }
 
 .listItemWrap + .listItemWrap {
@@ -22,14 +59,14 @@
 }
 
 .squareCard {
-	background: #ffffff;
+	background: #fffff0;
 	border-radius: 0;
 	padding: 0;
 	scroll-behavior: smooth;
 }
 
 .squareCardOpen {
-	background: #fffaf5;
+	background: #fffff0;
 }
 
 .listHeader {
@@ -56,7 +93,7 @@
 
 .listHeader h2 {
 	margin: 0;
-	color: #111827;
+	color: #111325;
 	font-size: 1.05rem;
 	font-family: var(--ff-acme);
 }
@@ -101,12 +138,12 @@
 .ingredients th,
 .ingredients td {
 	padding: 8px 12px;
-	border-bottom: 1px solid #eef2f7;
+	border-bottom: 1px solid #eeffff;
 	text-align: left;
 }
 
 .ingredients th {
-	background: #f8fafc;
+	background: #fafafa;
 	font-weight: 600;
 }
 
@@ -130,6 +167,11 @@
 }
 
 @media (max-width: 560px) {
+	.buttonHeader {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
 	.listContainer {
 		margin: 12px;
 	}

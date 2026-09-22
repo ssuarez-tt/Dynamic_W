@@ -5,6 +5,76 @@ body {
   background-color: #f4f4f4;
 }
 
+.appNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.appNav a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #1678b6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.appNav a:hover,
+.appNav a.active {
+  background: #eaf6ff;
+  color: #0f5f91;
+}
+
+.panel {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.06);
+}
+
+.panelTitle {
+  margin-top: 0;
+}
+
+.panelContent {
+  color: #374151;
+}
+
+.dropdownPage {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.06);
+}
+
+.dropdownPage h1 {
+  margin-top: 0;
+}
+
+.dropdownPage label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.dropdownPage select {
+  min-width: 240px;
+  padding: 9px 12px;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111827;
+  font: inherit;
+}
+
 /* CSS custom properties (variables). Defined once, used everywhere. */
 :root {
   --c-blue: #48b2ff;

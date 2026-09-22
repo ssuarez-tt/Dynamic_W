@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import cx from 'classnames'
-import recipe from './RecipeCard/recipe-data'
-import Card from './RecipeCard/Card.jsx'
-import RecipeImg from './RecipeCard/RecipeImg'
-import IngredientList from './RecipeCard/IngredientList'
-import InstructionList from './RecipeCard/InstructionList'
-import RecipeInfo from './RecipeCard/RecipeInfo'
-import styles from './RecipeCard/RecipeCard.module.css'
+import recipe from '../RecipeCard/recipe-data'
+import Card from '../RecipeCard/Card.jsx'
+import RecipeImg from '../RecipeCard/RecipeImg'
+import IngredientList from '../RecipeCard/IngredientList'
+import InstructionList from '../RecipeCard/InstructionList'
+import RecipeInfo from '../RecipeCard/RecipeInfo'
+import styles from '../RecipeCard/RecipeCard.module.css'
 
 const secondRecipe = {
   ...recipe,
