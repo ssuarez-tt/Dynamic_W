@@ -1,30 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 body {
+  margin: 0;
   font-family: 'Open Sans', sans-serif;
   background-color: #f4f4f4;
 }
 
-.appNav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  max-width: 900px;
-  margin: 20px auto;
+.appLayout {
+  min-height: 100vh;
 }
 
-.appNav a {
-  padding: 8px 12px;
-  border-radius: 6px;
-  color: #1678b6;
-  font-weight: 600;
+.appSidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 10;
+  display: flex;
+  width: 232px;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid #c8ccd1;
+  background: #f8f9fa;
+}
+
+.sidebarBrand {
+  flex: 0 0 auto;
+  padding: 20px 18px 18px;
+  border-bottom: 1px solid #eaecf0;
+  color: #202122;
+  font-family: var(--ff-acme);
+  font-size: 1.35rem;
   text-decoration: none;
 }
 
-.appNav a:hover,
-.appNav a.active {
-  background: #eaf6ff;
-  color: #0f5f91;
+.sidebarNav {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px 10px;
+  scrollbar-color: #a7a9ac transparent;
+  scrollbar-width: thin;
+}
+
+.sidebarLabel {
+  margin: 4px 10px 8px;
+  color: #54595d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.sidebarNav ul {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebarNav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #202122;
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+.sidebarNav a:hover {
+  background: #eaecf0;
+}
+
+.sidebarNav a.active {
+  background: #eaf3ff;
+  color: #0645ad;
+  font-weight: 700;
+}
+
+.appMain {
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: 232px;
+  padding: 1px 24px;
 }
 
 .panel {
@@ -73,6 +128,147 @@ body {
   background: #ffffff;
   color: #111827;
   font: inherit;
+}
+
+.modalPage {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.modalOpenButton,
+.modalPromptButton,
+.modalCloseButton {
+  border: 0;
+  border-radius: 6px;
+  background: #1678b6;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+}
+
+.modalOpenButton {
+  padding: 9px 14px;
+}
+
+.modalPageParagraph {
+  margin-bottom: 24px;
+}
+
+.modalOverlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+}
+
+.modalOverlayCrazy {
+  background: rgba(13, 148, 136, 0.52);
+}
+
+.modalDialog {
+  position: fixed;
+  z-index: 1001;
+  inset: 15vh 12vw auto;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.modalDialogCrazy {
+  border-radius: 16px;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modalContent {
+  padding: 16px 0 24px;
+  line-height: 1.65;
+}
+
+.modalActionBar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modalPromptButton,
+.modalCloseButton {
+  padding: 8px 14px;
+  border: 1px solid #1678b6;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.modalPromptButton {
+  background: #1678b6;
+  color: #ffffff;
+}
+
+.modalCloseButton {
+  background: #ffffff;
+  color: #1678b6;
+}
+
+@media (max-width: 600px) {
+  .appSidebar {
+    position: sticky;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid #c8ccd1;
+  }
+
+  .sidebarBrand {
+    padding: 12px 16px;
+    border-bottom: 0;
+  }
+
+  .sidebarNav {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 10px 10px;
+  }
+
+  .sidebarLabel {
+    display: none;
+  }
+
+  .sidebarNav ul {
+    display: flex;
+    width: max-content;
+    gap: 4px;
+  }
+
+  .sidebarNav a {
+    white-space: nowrap;
+  }
+
+  .appMain {
+    margin-left: 0;
+    padding: 1px 12px;
+  }
+
+  .modalDialog {
+    inset: 12vh 6vw auto;
+    max-height: 76vh;
+    padding: 18px;
+  }
 }
 
 /* CSS custom properties (variables). Defined once, used everywhere. */
