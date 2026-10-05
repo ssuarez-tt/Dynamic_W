@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
-const SearchBar = ({ onSearch, isLoading }) => {
-  const [query, setQuery] = useState('')
+const SearchBar = ({ onSearch, isLoading, initialQuery = '' }) => {
+  const [query, setQuery] = useState(initialQuery)
 
   const handleChange = (event) => {
     setQuery(event.target.value)
