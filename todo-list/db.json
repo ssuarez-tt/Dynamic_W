@@ -2,7 +2,8 @@
   "todos": [
     {
       "id": 1,
-      "title": "Wake the hell up"
+      "title": "Wake the hell up",
+      "done": true
     },
     {
       "id": 2,
