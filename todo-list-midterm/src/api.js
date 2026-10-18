@@ -20,3 +20,8 @@ export const updateTodo = async (todo) => {
   const response = await axios.put(`${BASE_URL}/todos/${todo.id}`, todo)
   return response.data
 }
+
+export const toggleTodo = async (id, done) => {
+  const response = await axios.patch(`${BASE_URL}/todos/${id}`, {done})
+  return response.data
+}

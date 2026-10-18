@@ -1,14 +1,15 @@
 import {useState} from 'react'
 import TodoEdit from './TodoEdit'
+import useTodosContext from '../../hoooks/use-todos-context'
 
-const TodoItem = (props) => {
-  const {todo, onDelete, onEdit, onToggle} = props
+const TodoItem = ({todo}) => {
+  const {deleteTodo, editTodo, toggleTodo} = useTodosContext()
   // THIS one belongs here. Whether this row is showing its edit form is
   // nobody else's business -- App does not care, the other rows do not care.
   const [showEdit, setShowEdit] = useState(false)
 
   const handleDelete = () => {
-    onDelete(todo.id)
+    deleteTodo(todo.id)
   }
 
   const handleEditClick = () => {
@@ -16,7 +17,7 @@ const TodoItem = (props) => {
   }
 
   const handleSubmit = async (id, newTitle) => {
-    const updated = await onEdit(id, newTitle)
+    const updated = await editTodo(id, newTitle)
     if (updated) {
       setShowEdit(false)
     }
@@ -32,7 +33,7 @@ const TodoItem = (props) => {
         <input
           type="checkbox"
           checked={Boolean(todo.done)}
-          onChange={(event) => onToggle(todo.id, event.target.checked)}
+          onChange={(event) => toggleTodo(todo.id, event.target.checked)}
           aria-label={`Mark ${todo.title} as ${todo.done ? 'active' : 'done'}`}
         />
         <span className={todo.done ? 'line-through text-gray-500' : ''}>

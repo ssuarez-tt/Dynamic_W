@@ -7,7 +7,8 @@
     },
     {
       "id": 2,
-      "title": "Read the week 06 notes"
+      "title": "Read the week 06 notes",
+      "done": false
     }
   ]
 }

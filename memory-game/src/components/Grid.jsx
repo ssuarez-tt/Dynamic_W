@@ -12,10 +12,12 @@ const cardImages = [
   { src: Argentina, name: 'Argentina' }
 ]
 
+const BEST_SCORE_KEY = 'memory-game-best-score'
+
 const createDeck = () => {
   const deck = cardImages.flatMap((card) => [
-    { ...card, id: `${card.name}-1` },
-    { ...card, id: `${card.name}-2` }
+    { ...card, id: crypto.randomUUID() },
+    { ...card, id: crypto.randomUUID() }
   ])
 
   for (let index = deck.length - 1; index > 0; index -= 1) {
@@ -31,8 +33,23 @@ const Grid = () => {
   const [choices, setChoices] = useState([])
   const [matchedIds, setMatchedIds] = useState([])
   const [turns, setTurns] = useState(0)
-  const [bestScore, setBestScore] = useState(null)
-  const hasWon = matchedIds.length === cards.length
+  const [bestScore, setBestScore] = useState(() => {
+    const storedScore = window.localStorage.getItem(BEST_SCORE_KEY)
+    if (storedScore === null) return null
+
+    const parsedScore = Number(storedScore)
+    return Number.isSafeInteger(parsedScore) && parsedScore >= 0 ? parsedScore : null
+  })
+  // The win check watches matchedIds because it changes only when a pair is
+  // confirmed, so it represents actual progress toward completing the board.
+  // Requiring at least one card prevents an empty board from counting as won.
+  const hasWon = cards.length > 0 && matchedIds.length === cards.length
+
+  useEffect(() => {
+    if (bestScore !== null) {
+      window.localStorage.setItem(BEST_SCORE_KEY, String(bestScore))
+    }
+  }, [bestScore])
 
   useEffect(() => {
     if (choices.length !== 2) return undefined
@@ -56,6 +73,9 @@ const Grid = () => {
     )
   }, [hasWon, turns])
 
+  // handleCardClick records one choice at a time. Reading choices immediately
+  // after setChoices would still give the old render's state; this effect runs
+  // after React commits the second choice, so it can compare the complete pair.
   const handleCardClick = (card) => {
     if (
       choices.length === 2 ||
@@ -65,7 +85,16 @@ const Grid = () => {
       return
     }
 
-    setChoices((currentChoices) => [...currentChoices, card])
+    setChoices((currentChoices) => {
+      if (
+        currentChoices.length === 2 ||
+        currentChoices.some((choice) => choice.id === card.id)
+      ) {
+        return currentChoices
+      }
+
+      return [...currentChoices, card]
+    })
   }
 
   const handleNewGame = () => {

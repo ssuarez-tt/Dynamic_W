@@ -1,7 +1,8 @@
 import {useState} from 'react'
+import useTodosContext from '../../hoooks/use-todos-context'
 
-const TodoCreate = (props) => {
-  const {onCreate} = props
+const TodoCreate = () => {
+  const {createTodo} = useTodosContext()
   // the input's text lives here -- this component owns it, because nobody
   // else needs to know what you are halfway through typing
   const [title, setTitle] = useState('')
@@ -12,7 +13,7 @@ const TodoCreate = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const created = await onCreate(title)
+    const created = await createTodo(title)
     if (created) {
       setTitle('')
     }

@@ -1,0 +1,8 @@
+import {createContext} from 'react';
+
+// createContext makes a channel.
+const TodoContext = createContext();
+
+
+
+export default TodoContext;
