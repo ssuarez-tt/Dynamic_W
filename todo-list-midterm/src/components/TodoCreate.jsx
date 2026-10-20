@@ -20,15 +20,15 @@ const TodoCreate = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2 mb-6">
+    <form onSubmit={handleSubmit} className="mb-6 flex flex-col gap-2 sm:flex-row">
       <input
         type="text"
         value={title}
         onChange={handleChange}
-        placeholder="What needs doing?"
+        placeholder="Book title"
         className="flex-1 border border-gray-300 rounded px-3 py-2"
       />
-      <button className="bg-blue-900 text-white px-5 py-2 rounded">Add</button>
+      <button className="rounded bg-blue-900 px-5 py-2 text-white sm:shrink-0">Add</button>
     </form>
   )
 }

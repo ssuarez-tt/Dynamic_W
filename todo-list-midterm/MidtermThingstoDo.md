@@ -13,18 +13,18 @@ page for each book, so that I can quickly continue from where I left off.
 
 ## Developer checklist
 
-- [ ] Decide that the new field is `currentPage` and that a new book starts at
+- [x] Decide that the new field is `currentPage` and that a new book starts at
   page `0`.
-- [ ] Add `currentPage: 0` to the example records in `db.json`.
-- [ ] Include `currentPage: 0` when creating a new book through the API.
-- [ ] Add a controlled number input for the current page to each book row.
-- [ ] Show the saved current page next to the book title.
-- [ ] Let the reader change the page and save the change from the row.
-- [ ] Validate that the page is a non-negative whole number before sending it.
-- [ ] Send the updated book to JSON Server with `PATCH`, so changing the page
-  does not replace the title or other fields.
-- [ ] Update the React Context state with the response returned by the server.
-- [ ] Show a useful error if saving the page fails, and keep the previous value.
+- [x] Send the updated book to JSON Server with `PATCH`.
+- [x] Update the React Context state with the response returned by the server.
+- [x] Show a useful error if saving the page fails, and keep the previous value.
 - [ ] Reload the app and confirm the saved page is still there.
 - [ ] Try an invalid page value and confirm it is rejected without changing the
   server data.
+
+## Mobile checklist
+
+- [ ] Use responsive spacing and heading sizes for narrow screens.
+- [ ] Stack the book-entry form and each reading-list row on small screens.
+- [ ] Test on a narrow mobile viewport and adjust any remaining overflow or
+  touch-target issues.

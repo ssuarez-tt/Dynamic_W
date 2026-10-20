@@ -4,6 +4,7 @@ import {
   deleteTodo as deleteTodoRequest,
   fetchTodos as fetchTodosRequest,
   toggleTodo as toggleTodoRequest,
+  updateCurrentPage as updateCurrentPageRequest,
   updateTodo as updateTodoRequest,
 } from '../api'
 
@@ -19,7 +20,11 @@ export const Provider = ({children}) => {
     const loadTodos = async () => {
       try {
         const loadedTodos = await fetchTodosRequest()
-        setTodos(loadedTodos.map((todo) => ({...todo, done: Boolean(todo.done)})))
+        setTodos(loadedTodos.map((todo) => ({
+          ...todo,
+          done: Boolean(todo.done),
+          currentPage: todo.currentPage ?? 0,
+        })))
       } catch (requestError) {
         console.error(requestError)
         setError(`Could not load todos: ${requestError.message}`)
@@ -36,7 +41,11 @@ export const Provider = ({children}) => {
       const newTodo = await createTodoRequest(title)
       setTodos((currentTodos) => [
         ...currentTodos,
-        {...newTodo, done: Boolean(newTodo.done)},
+        {
+          ...newTodo,
+          done: Boolean(newTodo.done),
+          currentPage: newTodo.currentPage ?? 0,
+        },
       ])
       setError('')
       return true
@@ -92,6 +101,26 @@ export const Provider = ({children}) => {
     }
   }
 
+  const saveCurrentPage = async (id, currentPage) => {
+    if (!Number.isSafeInteger(currentPage) || currentPage < 0) {
+      setError('Current page must be a non-negative whole number.')
+      return false
+    }
+
+    try {
+      const updatedTodo = await updateCurrentPageRequest(id, currentPage)
+      setTodos((currentTodos) =>
+        currentTodos.map((item) => item.id === id ? {...item, ...updatedTodo} : item)
+      )
+      setError('')
+      return true
+    } catch (requestError) {
+      console.error(requestError)
+      setError(`Could not save current page: ${requestError.message}`)
+      return false
+    }
+  }
+
   const visibleTodos = useMemo(() => {
     if (filter === 'active') {
       return todos.filter((todo) => !todo.done)
@@ -113,6 +142,7 @@ export const Provider = ({children}) => {
     deleteTodo,
     editTodo,
     toggleTodo,
+    saveCurrentPage,
   }
 
   return <TodosContext.Provider value={value}>{children}</TodosContext.Provider>

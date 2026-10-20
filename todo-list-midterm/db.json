@@ -3,12 +3,14 @@
     {
       "id": 1,
       "title": "Wake the hell up",
-      "done": true
+      "done": false,
+      "currentPage": 0
     },
     {
       "id": 2,
       "title": "Read the week 06 notes",
-      "done": false
+      "done": false,
+      "currentPage": 0
     }
   ]
 }

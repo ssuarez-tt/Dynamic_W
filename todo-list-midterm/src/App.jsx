@@ -35,8 +35,8 @@ const App = () => {
   ))
 
   return (
-    <div className="max-w-xl mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-6">Todo List</h1>
+    <div className="mx-auto max-w-xl p-4 sm:p-8">
+      <h1 className="mb-6 text-2xl font-bold sm:text-3xl">Reading List</h1>
       <TodoCreate />
       <div className="mb-3 flex gap-2" role="group" aria-label="Filter todos">
         {renderFilterButtons}

@@ -8,7 +8,11 @@ export const fetchTodos = async () => {
 }
 
 export const createTodo = async (title) => {
-  const response = await axios.post(`${BASE_URL}/todos`, {title, done: false})
+  const response = await axios.post(`${BASE_URL}/todos`, {
+    title,
+    done: false,
+    currentPage: 0,
+  })
   return response.data
 }
 
@@ -23,5 +27,10 @@ export const updateTodo = async (todo) => {
 
 export const toggleTodo = async (id, done) => {
   const response = await axios.patch(`${BASE_URL}/todos/${id}`, {done})
+  return response.data
+}
+
+export const updateCurrentPage = async (id, currentPage) => {
+  const response = await axios.patch(`${BASE_URL}/todos/${id}`, {currentPage})
   return response.data
 }
