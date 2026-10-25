@@ -17,13 +17,13 @@ page for each book, so that I can quickly continue from where I left off.
   page `0`.
 - [x] Send the updated book to JSON Server with `PATCH`.
 - [x] Update the React Context state with the response returned by the server.
-- [x] Show a useful error if saving the page fails, and keep the previous value.
-- [ ] Reload the app and confirm the saved page is still there.
+- [ ] Show a useful error if saving the page fails, and keep the previous value.
 - [ ] Try an invalid page value and confirm it is rejected without changing the
   server data.
-
-## Mobile checklist
-
+- [ ] Add a `totalPages` field for each book, then use `currentPage` and
+  `totalPages` to show reading progress as a progress bar or a progress-based
+  color change.
+- [ ] Try reducer with returned states
 - [ ] Use responsive spacing and heading sizes for narrow screens.
 - [ ] Stack the book-entry form and each reading-list row on small screens.
 - [ ] Test on a narrow mobile viewport and adjust any remaining overflow or
