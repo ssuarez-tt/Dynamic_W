@@ -2,15 +2,19 @@
   "todos": [
     {
       "id": 1,
-      "title": "Wake the hell up",
+      "title": "The State and Revolution",
       "done": false,
-      "currentPage": 0
+      "currentPage": 25,
+      "totalPages": 300,
+      "note": "The state is a product and a manifestation of the irreconcilability of class antagonisms. The state arises where, when and insofar as class antagonism objectively cannot be reconciled. And, conversely, the existence of the state proves that the class antagonisms are irreconcilable."
     },
     {
       "id": 2,
-      "title": "Read the week 06 notes",
+      "title": "What Is to Be Done?",
       "done": false,
-      "currentPage": 0
+      "currentPage": 0,
+      "totalPages": 205,
+      "note": ""
     }
   ]
 }

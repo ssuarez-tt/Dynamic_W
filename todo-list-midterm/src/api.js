@@ -7,11 +7,13 @@ export const fetchTodos = async () => {
   return response.data
 }
 
-export const createTodo = async (title) => {
+export const createTodo = async (title, totalPages) => {
   const response = await axios.post(`${BASE_URL}/todos`, {
     title,
     done: false,
     currentPage: 0,
+    totalPages,
+    note: '',
   })
   return response.data
 }

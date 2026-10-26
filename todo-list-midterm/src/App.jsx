@@ -26,7 +26,7 @@ const App = () => {
       type="button"
       onClick={() => setFilter(value)}
       aria-pressed={filter === value}
-      className={`rounded px-3 py-1 text-sm ${
+      className={`min-h-11 rounded px-3 py-2 text-sm ${
         filter === value ? 'bg-blue-900 text-white' : 'bg-gray-100 text-gray-700'
       }`}
     >
@@ -35,7 +35,7 @@ const App = () => {
   ))
 
   return (
-    <div className="mx-auto max-w-xl p-4 sm:p-8">
+    <div className="mx-auto max-w-5xl p-4 sm:p-8">
       <h1 className="mb-6 text-2xl font-bold sm:text-3xl">Reading List</h1>
       <TodoCreate />
       <div className="mb-3 flex gap-2" role="group" aria-label="Filter todos">

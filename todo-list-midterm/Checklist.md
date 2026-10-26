@@ -1,5 +1,3 @@
-# Midterm Project
-
 ## What is your app for?
 
 This app is a reading list for books I want to finish. It keeps track of where
@@ -15,16 +13,19 @@ page for each book, so that I can quickly continue from where I left off.
 
 - [x] Decide that the new field is `currentPage` and that a new book starts at
   page `0`.
+- [x] Add `totalPages` when creating a book and allow it to be edited.
 - [x] Send the updated book to JSON Server with `PATCH`.
 - [x] Update the React Context state with the response returned by the server.
-- [ ] Show a useful error if saving the page fails, and keep the previous value.
-- [ ] Try an invalid page value and confirm it is rejected without changing the
-  server data.
-- [ ] Add a `totalPages` field for each book, then use `currentPage` and
-  `totalPages` to show reading progress as a progress bar or a progress-based
-  color change.
-- [ ] Try reducer with returned states
-- [ ] Use responsive spacing and heading sizes for narrow screens.
-- [ ] Stack the book-entry form and each reading-list row on small screens.
-- [ ] Test on a narrow mobile viewport and adjust any remaining overflow or
+- [x] Show a useful error if saving the page fails, and restore the previous
+  value in the input.
+- [x] Reject invalid page values (negative, decimal, or beyond total pages)
+  before changing server data.
+- [x] Add a `totalPages` field for each book and show progress using
+  `currentPage` and `totalPages`.
+- [x] Use a reducer to apply server-returned todo states consistently.
+- [x] Use responsive spacing and stack the create form and book rows on narrow
+  screens.
+- [x] Test on a narrow mobile viewport and adjust any remaining overflow or
   touch-target issues.
+- [x] Reload the app and confirm the saved page and total page count persist.
+- [x] Add an editable note field for every book.
