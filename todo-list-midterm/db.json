@@ -4,16 +4,16 @@
       "id": 1,
       "title": "The State and Revolution",
       "done": false,
-      "currentPage": 25,
+      "currentPage": 12,
       "totalPages": 300,
       "note": "The state is a product and a manifestation of the irreconcilability of class antagonisms. The state arises where, when and insofar as class antagonism objectively cannot be reconciled. And, conversely, the existence of the state proves that the class antagonisms are irreconcilable."
     },
     {
       "id": 2,
       "title": "What Is to Be Done?",
-      "done": false,
-      "currentPage": 0,
-      "totalPages": 205,
+      "done": true,
+      "currentPage": 31,
+      "totalPages": 300,
       "note": ""
     }
   ]
