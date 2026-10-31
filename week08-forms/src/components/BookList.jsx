@@ -17,7 +17,9 @@ const BookList = ({books}) => {
           {book.dateStarted && (
             <p className="text-sm text-gray-500">started {book.dateStarted}</p>
           )}
-          {book.notes && <p className="mt-1 text-sm">{book.notes}</p>}
+          {book.notes && (
+            <p className="mt-1 whitespace-pre-wrap text-sm">{book.notes}</p>
+          )}
         </li>
       ))}
     </ul>

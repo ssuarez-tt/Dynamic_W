@@ -36,3 +36,43 @@ export const updateCurrentPage = async (id, currentPage) => {
   const response = await axios.patch(`${BASE_URL}/todos/${id}`, {currentPage})
   return response.data
 }
+
+export const translateNote = async (note, targetLanguage) => {
+  const response = await fetch('http://localhost:3002/api/translate', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({text: note, targetLanguage}),
+  })
+
+  let result
+  try {
+    result = await response.json()
+  } catch {
+    throw new Error(`Translation server returned an unreadable response (HTTP ${response.status}).`)
+  }
+
+  if (!result || typeof result !== 'object') {
+    throw new Error('Translation server returned an invalid response.')
+  }
+
+  if (!response.ok) {
+    const detail = typeof result.error === 'string'
+      ? result.error
+      : typeof result.message === 'string'
+        ? result.message
+        : ''
+    throw new Error(detail || `Translation request failed with HTTP ${response.status}.`)
+  }
+
+  if (typeof result.translatedText !== 'string') {
+    throw new Error('Translation server response did not include translated text.')
+  }
+
+  return {
+    translatedText: result.translatedText,
+    targetLanguage: result.targetLanguage,
+    alternatives: Array.isArray(result.alternatives)
+      ? result.alternatives.filter((alternative) => typeof alternative === 'string')
+      : [],
+  }
+}

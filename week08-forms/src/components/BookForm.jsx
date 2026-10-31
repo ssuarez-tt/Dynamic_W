@@ -114,6 +114,7 @@ const BookForm = ({onAdd}) => {
         <input
           id="title"
           name="title"
+          required
           maxLength="120"
           value={values.title}
           onChange={handleChange}
@@ -132,6 +133,7 @@ const BookForm = ({onAdd}) => {
         <input
           id="author"
           name="author"
+          required
           value={values.author}
           onChange={handleChange}
           onBlur={handleBlur}
@@ -215,6 +217,7 @@ const BookForm = ({onAdd}) => {
           name="dateStarted"
           type="date"
           value={values.dateStarted}
+          required={values.finished}
           onChange={handleChange}
           onBlur={handleBlur}
           aria-invalid={showError('dateStarted') ? true : undefined}
