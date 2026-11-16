@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-flat-red: #e52b23;
+  --color-flat-blue: #0b4ea2;
+  --color-flat-yellow: #f9d616;
+  --color-ink: #111111;
+  --color-paper: #f4f1ea;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--color-flat-blue);
+  outline-offset: 3px;
+}
