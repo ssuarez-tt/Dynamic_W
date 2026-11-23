@@ -1,24 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit'
+import {addArt} from './artSlice'
 
 const formSlice = createSlice({
   name: 'form',
   initialState: {
-    // Define your initial state here
     name: '',
     price: 0,
   },
   reducers: {
-    // reducer is a function that updates the state based on the action dispatched
-    changeName: (state, action) => {
-      state.name = action.payload;
+    changeName(state, action) {
+      state.name = action.payload
     },
-    changePrice: (state, action) => {
-      state.price = action.payload;
+    changePrice(state, action) {
+      state.price = action.payload
     },
   },
-});
-
+  extraReducers(builder) {
+    builder.addCase(addArt, (state) => {
+      state.name = ''
+      state.price = 0
+    })
+  },
+})
 
 export const {changeName, changePrice} = formSlice.actions
-
 export const formReducer = formSlice.reducer
